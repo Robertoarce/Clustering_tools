@@ -14,12 +14,11 @@ class DataGenerator:
   def __init__(self ):
     self.seed = np.random.seed(42)
     self.data = None
-    self.type = None
-
+    self.type = None 
 
   # CLUSTERING
 
-  def generate_cluster(self, dataset_type='blobs', n_samples=300, noise=0.1, random_state=42):
+  def generate_cluster(self, dataset_type='blobs', n_samples=300, noise=0.1, random_state=42, centers=4):
       """
       Generate synthetic data for clustering practice.
       
@@ -37,7 +36,7 @@ class DataGenerator:
           # Generate isotropic Gaussian blobs
           X, y = make_blobs(
               n_samples=n_samples,
-              centers=4,
+              centers=centers,
               n_features=2,
               cluster_std=noise*3,
               random_state=random_state
